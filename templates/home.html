@@ -1,0 +1,118 @@
+{% load static %}
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>خانه | پرنده</title>
+  <link rel="stylesheet" href="https://lib.arvancloud.ir/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <script defer src="https://lib.arvancloud.ir/feather-icons/4.9.0/feather.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="container app-container d-flex align-items-center justify-content-between">
+    <a class="brand" href="index.html"><span class="brand-mark"><i data-feather="twitter"></i></span><span>پرنده</span></a>
+    <nav class="top-links">
+      <a class="active" href="index.html"><i data-feather="home"></i><span>خانه</span></a>
+      <a href="#"><i data-feather="hash"></i><span>کاوش</span></a>
+      <a href="#"><i data-feather="bell"></i><span>اعلان‌ها</span></a>
+      <a href="#"><i data-feather="mail"></i><span>پیام‌ها</span></a>
+    </nav>
+    <div class="auth-links">
+      {% if user.is_authenticated  %}
+        <a class="btn btn-outline-primary btn-sm" href="#">پروفایل</a>
+      <a class="btn btn-primary btn-sm" href="{% url 'logout' %}">خروج</a>
+      {% else %}
+          <a class="btn btn-outline-primary btn-sm" href="{% url 'login' %}">ورود</a>
+      <a class="btn btn-primary btn-sm" href="{% url 'register' %}">ثبت نام</a>
+      {% endif %}
+    </div>
+  </div>
+</header>
+<main class="container app-container page-layout">
+  <aside class="sidebar sidebar-right">
+    <section class="panel profile-card">
+      <div class="cover"></div>
+      <div class="profile-body">
+        <div class="avatar avatar-large">ر</div>
+        <h5>{{ user.first_name }}</h5><p class="muted">@{{ user.username}}</p>
+        <p class="profile-bio">اینجا یه بیو کوتاه برای معرفی خودت بنویس.</p>
+        <div class="profile-stats"><div><strong>۱۲۸</strong><span>دنبال‌شونده</span></div><div><strong>۳۴۵</strong><span>دنبال‌کننده</span></div></div>
+      </div>
+    </section>
+    <section class="panel trends">
+      <div class="panel-heading"><h5>موضوعات داغ</h5><i data-feather="settings"></i></div>
+      <a class="trend-item" href="#"><small>موضوع داغ · فناوری</small><strong>#برنامه_نویسی</strong><small>۱٬۲۴۰ پست</small></a>
+      <a class="trend-item" href="#"><small>موضوع داغ · ایران</small><strong>#پایتون</strong><small>۸۶۰ پست</small></a>
+      <a class="trend-item" href="#"><small>موضوع داغ · فناوری</small><strong>#جنگو</strong><small>۴۲۰ پست</small></a>
+      <a class="show-more" href="#">نمایش بیشتر</a>
+    </section>
+  </aside>
+
+  <section class="feed">
+    <div class="feed-title"><h4>خانه</h4><i data-feather="star"></i></div>
+    <section class="panel composer">
+      <div class="avatar">ش</div>
+      <div class="composer-content">
+        <textarea class="form-control" rows="2" placeholder="چه خبر؟"></textarea>
+        <div class="composer-bottom">
+          <div class="composer-tools">
+            <button type="button" aria-label="افزودن تصویر"><i data-feather="image"></i></button>
+            <button type="button" aria-label="افزودن نظرسنجی"><i data-feather="bar-chart-2"></i></button>
+            <button type="button" aria-label="افزودن ایموجی"><i data-feather="smile"></i></button>
+            <button type="button" aria-label="زمان‌بندی"><i data-feather="calendar"></i></button>
+          </div>
+          <button class="btn btn-primary tweet-button" type="button">توییت کن</button>
+        </div>
+      </div>
+    </section>
+    <div class="timeline-notice">توییت‌های جدید را ببین</div>
+
+    <article class="panel tweet">
+      <div class="avatar">آ</div><div class="tweet-content">
+        <div class="tweet-heading"><strong>آرمان رضایی</strong><span class="handle">@arman_dev</span><span class="dot">·</span><time>۲ ساعت پیش</time><button class="more-button" aria-label="بیشتر"><i data-feather="more-horizontal"></i></button></div>
+        <p class="tweet-text">امروز یه چیز جدید یاد گرفتم و فهمیدم که با تمرین مداوم، چیزهای سخت هم کم‌کم ساده می‌شن.</p>
+        <div class="tweet-actions"><button><i data-feather="message-circle"></i><span>۱۲</span></button><button><i data-feather="repeat"></i><span>۴</span></button><button><i data-feather="heart"></i><span>۳۲</span></button><button><i data-feather="bar-chart-2"></i><span>۸۲۰</span></button><button aria-label="ذخیره"><i data-feather="bookmark"></i></button><button aria-label="اشتراک‌گذاری"><i data-feather="share"></i></button></div>
+      </div>
+    </article>
+    <article class="panel tweet">
+      <div class="avatar avatar-pink">م</div><div class="tweet-content">
+        <div class="tweet-heading"><strong>مینا کاظمی</strong><span class="handle">@mina_codes</span><span class="dot">·</span><time>۳ ساعت پیش</time><button class="more-button" aria-label="بیشتر"><i data-feather="more-horizontal"></i></button></div>
+        <p class="tweet-text">گاهی بهترین راه حل اینه که کد رو ساده‌تر کنیم، نه اینکه پیچیده‌ترش کنیم.</p>
+        <div class="tweet-actions"><button><i data-feather="message-circle"></i><span>۸</span></button><button><i data-feather="repeat"></i><span>۲</span></button><button><i data-feather="heart"></i><span>۱۸</span></button><button><i data-feather="bar-chart-2"></i><span>۴۵۰</span></button><button aria-label="ذخیره"><i data-feather="bookmark"></i></button><button aria-label="اشتراک‌گذاری"><i data-feather="share"></i></button></div>
+      </div>
+    </article>
+    <article class="panel tweet">
+      <div class="avatar avatar-green">ن</div><div class="tweet-content">
+        <div class="tweet-heading"><strong>نوید محمدی</strong><span class="handle">@navid_web</span><span class="dot">·</span><time>۵ ساعت پیش</time><button class="more-button" aria-label="بیشتر"><i data-feather="more-horizontal"></i></button></div>
+        <p class="tweet-text">یه پروژه کوچیک می‌تونه شروع یه مسیر بزرگ باشه. فقط باید از همون قدم اول شروع کرد.</p>
+        <div class="tweet-actions"><button><i data-feather="message-circle"></i><span>۲۱</span></button><button><i data-feather="repeat"></i><span>۷</span></button><button><i data-feather="heart"></i><span>۵۶</span></button><button><i data-feather="bar-chart-2"></i><span>۱٫۲هزار</span></button><button aria-label="ذخیره"><i data-feather="bookmark"></i></button><button aria-label="اشتراک‌گذاری"><i data-feather="share"></i></button></div>
+      </div>
+    </article>
+    <article class="panel tweet">
+      <div class="avatar avatar-orange">س</div><div class="tweet-content">
+        <div class="tweet-heading"><strong>سارا احمدی</strong><span class="handle">@sara_design</span><span class="dot">·</span><time>دیروز</time><button class="more-button" aria-label="بیشتر"><i data-feather="more-horizontal"></i></button></div>
+        <p class="tweet-text">روز خوبی برای یاد گرفتن، ساختن و امتحان کردن ایده‌های تازه است!</p>
+        <div class="tweet-actions"><button><i data-feather="message-circle"></i><span>۵</span></button><button><i data-feather="repeat"></i><span>۱</span></button><button><i data-feather="heart"></i><span>۹</span></button><button><i data-feather="bar-chart-2"></i><span>۲۱۰</span></button><button aria-label="ذخیره"><i data-feather="bookmark"></i></button><button aria-label="اشتراک‌گذاری"><i data-feather="share"></i></button></div>
+      </div>
+    </article>
+  </section>
+
+  <aside class="sidebar sidebar-left">
+    <section class="search-box"><i data-feather="search"></i><input type="search" placeholder="جستجو در پرنده"></section>
+    <section class="panel suggestions">
+      <div class="panel-heading"><h5>چه کسانی را دنبال کنید</h5></div>
+      <div class="suggestion"><div class="avatar">ن</div><div class="suggestion-info"><strong>نیما برنامه‌نویس</strong><small>@nima_py</small></div><button class="btn btn-outline-dark btn-sm follow-button" type="button">دنبال کردن</button></div>
+      <div class="suggestion"><div class="avatar avatar-pink">ل</div><div class="suggestion-info"><strong>لیلا طراح</strong><small>@leila_ui</small></div><button class="btn btn-outline-dark btn-sm follow-button" type="button">دنبال کردن</button></div>
+      <div class="suggestion"><div class="avatar avatar-green">ک</div><div class="suggestion-info"><strong>کامران وب</strong><small>@kamran_web</small></div><button class="btn btn-outline-dark btn-sm follow-button" type="button">دنبال کردن</button></div>
+      <a class="show-more" href="#">نمایش بیشتر</a>
+    </section>
+    <div class="side-note">شرایط استفاده · حریم خصوصی · سیاست کوکی‌ها<br>اطلاعات تبلیغات · © ۲۰۲۶ پرنده</div>
+  </aside>
+</main>
+<footer class="site-footer container app-container"><span>درباره ما</span><span>قوانین</span><span>حریم خصوصی</span><span>© ۲۰۲۶ پرنده</span></footer>
+<script>document.addEventListener("DOMContentLoaded", function () { if (window.feather) feather.replace(); });</script>
+</body>
+</html>
