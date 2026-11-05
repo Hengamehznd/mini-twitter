@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Vazirmatn;
+  src: url("https://lib.arvancloud.ir/vazir-font/33.003/Farsi-Digits/fonts/ttf/Vazirmatn-FD-Medium.ttf") format("truetype");
+  font-weight: 500; font-display: swap;
+}
+:root { --blue:#1d9bf0; --blue-dark:#1685cf; --text:#0f1419; --muted:#657786; --line:#eff3f4; --page:#f7f9fa; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--page); color:var(--text); font-family:Vazirmatn,sans-serif; font-size:14px; }
+a { color:var(--blue); text-decoration:none; }
+.topbar { background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; }
+.app-container { max-width:1240px; }
+.topbar .app-container { min-height:64px; gap:28px; }
+.brand { display:flex; align-items:center; gap:9px; font-size:22px; font-weight:bold; color:var(--blue); white-space:nowrap; }
+.brand-mark { display:inline-flex; align-items:center; justify-content:center; }
+.brand-mark svg { width:27px; height:27px; }
+.top-links { display:flex; align-items:center; justify-content:center; gap:25px; flex:1; }
+.top-links a { display:flex; align-items:center; gap:7px; color:#536471; }
+.top-links a:hover,.top-links a.active { color:var(--blue); }
+.top-links svg { width:19px; height:19px; }
+.auth-links { display:flex; gap:8px; white-space:nowrap; }
+.btn-primary { background:var(--blue); border-color:var(--blue); border-radius:22px; font-weight:600; }
+.btn-primary:hover { background:var(--blue-dark); border-color:var(--blue-dark); }
+.btn-outline-primary { border-radius:22px; }
+.page-layout { display:grid; grid-template-columns:250px minmax(420px,600px) 280px; gap:22px; align-items:start; padding-top:22px; direction:rtl; }
+.sidebar,.feed { min-width:0; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:13px; overflow:hidden; margin-bottom:14px; }
+.feed-title { display:flex; justify-content:space-between; align-items:center; padding:13px 16px; background:#fff; border:1px solid var(--line); border-radius:13px 13px 0 0; }
+.feed-title h4 { margin:0; font-size:18px; font-weight:700; }
+.feed-title svg,.panel-heading svg { color:var(--blue); width:18px; }
+.profile-card .cover { height:82px; background:linear-gradient(120deg,#8bd3ff,#1d9bf0); }
+.profile-body { padding:0 15px 16px; position:relative; }
+.avatar { width:43px; height:43px; flex:0 0 43px; border-radius:50%; background:#d7efff; color:#1268a3; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:bold; border:2px solid #fff; }
+.avatar-large { width:68px; height:68px; font-size:24px; margin-top:-34px; margin-bottom:8px; border:3px solid #fff; }
+.avatar-pink { background:#ffe0ec; color:#a82e63; }.avatar-green { background:#d9f5e6; color:#18734a; }.avatar-orange { background:#ffead6; color:#98500c; }
+.profile-body h5 { font-size:15px; margin:0 0 3px; font-weight:700; }
+.muted,.handle,time,.tweet-heading .dot { color:var(--muted); }
+.profile-body .muted { margin:0 0 12px; font-size:12px; }
+.profile-bio { font-size:13px; line-height:1.8; margin-bottom:14px; }
+.profile-stats { display:flex; gap:18px; }.profile-stats div { display:flex; gap:5px; align-items:center; }.profile-stats strong { font-size:13px; }.profile-stats span { font-size:11px; color:var(--muted); }
+.panel-heading { display:flex; justify-content:space-between; align-items:center; padding:15px; border-bottom:1px solid var(--line); }.panel-heading h5 { margin:0; font-size:16px; font-weight:700; }
+.trend-item { display:flex; flex-direction:column; gap:3px; padding:12px 15px; color:var(--text); }.trend-item:hover,.suggestion:hover { background:#f7f9fa; }.trend-item small { color:var(--muted); font-size:11px; }.trend-item strong { font-size:13px; }.show-more { display:block; padding:13px 15px; border-top:1px solid var(--line); }
+.composer { display:flex; gap:12px; padding:15px; border-radius:0; margin-bottom:0; }.composer-content { min-width:0; flex:1; }.composer textarea { border:0; resize:vertical; box-shadow:none; font-size:16px; padding:7px 0; min-height:58px; font-family:inherit; }.composer textarea:focus { box-shadow:none; }
+.composer-bottom { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:10px; }.composer-tools { display:flex; gap:13px; }.composer-tools button,.tweet-actions button,.more-button { border:0; background:transparent; color:var(--blue); padding:4px; display:inline-flex; align-items:center; gap:7px; }.composer-tools svg { width:18px; height:18px; }.tweet-button { padding:7px 18px; }
+.timeline-notice { text-align:center; padding:13px; color:var(--blue); background:#fff; border:1px solid var(--line); border-top:0; cursor:pointer; }
+.tweet { display:flex; gap:11px; padding:15px; margin:0; border-radius:0; border-top:0; }.tweet-content { flex:1; min-width:0; }.tweet-heading { display:flex; align-items:center; flex-wrap:wrap; gap:6px; font-size:13px; }.tweet-heading strong { font-weight:700; }.handle,time { font-size:12px; }.more-button { margin-right:auto; color:var(--muted); }.more-button svg { width:18px; }.tweet-text { font-size:14px; line-height:1.95; margin:10px 0 13px; white-space:pre-line; }.tweet-actions { display:flex; justify-content:space-between; align-items:center; gap:8px; color:var(--muted); }.tweet-actions button { color:var(--muted); font-size:11px; }.tweet-actions button:hover { color:var(--blue); }.tweet-actions svg { width:17px; height:17px; }
+.search-box { display:flex; align-items:center; gap:10px; background:#edf2f5; border-radius:24px; padding:12px 15px; margin-bottom:14px; }.search-box svg { width:18px; color:var(--muted); }.search-box input { width:100%; border:0; outline:0; background:transparent; font:inherit; min-width:0; }
+.suggestion { display:flex; align-items:center; gap:9px; padding:12px; }.suggestion .avatar { width:39px; height:39px; flex-basis:39px; }.suggestion-info { min-width:0; flex:1; display:flex; flex-direction:column; gap:3px; }.suggestion-info strong { font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }.suggestion-info small { font-size:11px; color:var(--muted); }.follow-button { border-radius:20px; font-size:11px; white-space:nowrap; font-weight:bold; }
+.side-note { color:var(--muted); font-size:11px; line-height:2.1; padding:5px 8px; }.site-footer { display:flex; justify-content:center; gap:18px; color:var(--muted); font-size:11px; padding:25px 12px; flex-wrap:wrap; }
+.auth-wrap { display:flex; justify-content:center; padding:28px 0 50px; }.auth-card { width:100%; max-width:460px; padding:30px; border-radius:17px; }.auth-logo { width:44px; height:44px; border-radius:50%; background:#e8f5fd; color:var(--blue); display:flex; align-items:center; justify-content:center; margin-bottom:15px; }.auth-logo svg { width:24px; height:24px; }.auth-card h1 { font-size:25px; font-weight:800; margin-bottom:7px; }.auth-card>.muted { margin-bottom:24px; }.auth-card .form-label { font-weight:600; }.auth-card .form-control { border-radius:9px; padding:11px 12px; font-family:inherit; }.auth-card .form-control:focus { border-color:var(--blue); box-shadow:0 0 0 .2rem #1d9bf022; }.auth-submit { padding:11px; margin-top:5px; }.auth-switch { margin:20px 0 0; text-align:center; color:var(--muted); }
+@media(max-width:1100px) { .page-layout { grid-template-columns:220px minmax(380px,1fr); max-width:900px; }.sidebar-left { display:none; } }
+@media(max-width:720px) { .topbar .app-container { min-height:58px; gap:12px; padding:0 13px; }.top-links { gap:16px; }.top-links a span { display:none; }.top-links a svg { width:21px; height:21px; }.brand { font-size:18px; }.auth-links .btn { padding:5px 10px; font-size:11px; }.page-layout { display:block; padding:12px 0 0; }.sidebar-right { display:none; }.feed-title,.composer,.tweet,.timeline-notice { border-radius:0; }.auth-wrap { padding:10px 12px 30px; }.auth-card { padding:23px 19px; }.tweet { padding:13px 12px; }.tweet-actions { gap:4px; }.tweet-actions button { gap:4px; }.tweet-actions svg { width:16px; height:16px; } }

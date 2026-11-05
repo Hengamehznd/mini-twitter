@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ورود | پرنده</title>
+    <link
+      rel="stylesheet"
+      href="https://lib.arvancloud.ir/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script
+      defer
+      src="https://lib.arvancloud.ir/feather-icons/4.9.0/feather.min.js"
+    ></script>
+  </head>
+  <body class="auth-page">
+    <header class="topbar">
+      <div
+        class="container app-container d-flex align-items-center justify-content-between"
+      >
+        <a class="brand" href="index.html"
+          ><span class="brand-mark"><i data-feather="twitter"></i></span
+          ><span>پرنده</span></a
+        >
+        <div class="auth-links">
+          <a class="btn btn-outline-primary btn-sm" href="login.html">ورود</a
+          ><a class="btn btn-primary btn-sm" href="signup.html">ثبت نام</a>
+        </div>
+      </div>
+    </header>
+    <main class="container app-container">
+      <section class="auth-wrap">
+        <div class="auth-card panel">
+          <div class="auth-logo"><i data-feather="twitter"></i></div>
+          <h1>خوش برگشتی!</h1>
+          <p class="muted">برای ادامه وارد حساب خودت شو.</p>
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label" for="email">ایمیل</label
+              ><input
+                class="form-control"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">رمز عبور</label
+              ><input
+                class="form-control"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="رمز عبور"
+                autocomplete="current-password"
+              />
+            </div>
+            <button class="btn btn-primary w-100 auth-submit" type="submit">
+              ورود
+            </button>
+          </form>
+          <p class="auth-switch">
+            حساب نداری؟ <a href="{% url 'register' %}">ثبت نام کن</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.feather) feather.replace();
+      });
+    </script>
+  </body>
+</html>
